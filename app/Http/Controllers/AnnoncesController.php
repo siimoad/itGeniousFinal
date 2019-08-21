@@ -47,6 +47,10 @@ class AnnoncesController extends Controller
         return view('Guest.pearsonvue');
     }
 
+    public function packsHome()
+    {
+        return view('Guest.packs');
+    }
     public function create()
     {
         $annonces = Annonce::all();

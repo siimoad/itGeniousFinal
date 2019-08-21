@@ -31,14 +31,18 @@ Route::get('/detail', function () {
     return view('Admin/detail');
 })->name('detail');
 
-Route::get('/mesformations', function () {
+Route::get('/MesFormations', function () {
     return view('Client/mesformations');
 })->name('mesformations');
+
+Route::get('/MesPaiements', function () {
+    return view('Client/Paiementclient');
+})->name('Paiementclient');
 
 
 
 Route::get('/microsoft', 'AnnoncesController@microsoftHome')->name('microsoft');
-Route::get('/packs', 'AnnoncesController@microsoftHome')->name('packs');
+Route::get('/packs', 'AnnoncesController@packsHome')->name('packs');
 Route::get('/office', 'AnnoncesController@officeHome')->name('office');
 Route::get('/adobe', 'AnnoncesController@adobeHome')->name('adobe');
 Route::get('/comptia', 'AnnoncesController@comptiaHome')->name('comptia');

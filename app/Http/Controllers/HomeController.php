@@ -23,7 +23,7 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::user()->privilege == 0){
-            return view('Client/dashboard');
+            return view('Client/mesformations');
         }
         else
         return view('Admin/dashboard');

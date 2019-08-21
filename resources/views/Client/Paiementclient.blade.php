@@ -14,10 +14,10 @@
             <table class="table align-items-center">
                 <thead class="thead-light">
                     <tr>
-                        <th scope="col">Project</th>
+                        <th scope="col">Formation</th>
                         <th scope="col">Date Debut</th>
                         <th scope="col">Date Fin</th>
-                        <th scope="col">PDF</th>
+                        <th scope="col">Paiement</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -37,7 +37,7 @@
                              30/12/2019
                             </span>
                         </td>
-                        <td >pdf</td>
+                        <td >Non paye</td>
                         <td class="text-right">
                             
                         </td>
@@ -52,7 +52,7 @@
             </table>
         </div>
         
-    </div><div class="text-center text-white py-7">
+    </div><div class="text-center text-white py-9">
             <INPUT class="btn btn-lg btn-primary" TYPE="button" VALUE="Retour" onClick="history.back()">
             
         </div>

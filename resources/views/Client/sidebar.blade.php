@@ -66,11 +66,7 @@
             </form>
             <!-- Navigation -->
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('home')}}">
-                        <i class="ni ni-tv-2 text-primary"></i> Dashboard
-                    </a>
-                </li>
+           
                 <!--
                 <li class="nav-item">
                     <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
@@ -96,24 +92,15 @@
             -->
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('mesformations')}}">
-                        <i class="ni ni-planet text-blue"></i> Mes Formations
+                        <i class="ni ni-hat-3 text-blue"></i> Mes Formations
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="ni ni-pin-3 text-orange"></i> Maps
+                    <a class="nav-link" href="{{route('Paiementclient')}}">
+                        <i class="ni ni-money-coins text-orange"></i>  Mes Paiements
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="ni ni-key-25 text-info"></i> Login
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="ni ni-circle-08 text-pink"></i> Register
-                    </a>
-                </li>
+              
                 
             </ul>
             <!-- Divider -->
