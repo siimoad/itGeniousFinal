@@ -79,3 +79,7 @@ Route::post('/reserver/{id}', 'ReservationsController@store')->name('reserver');
 Route::post('/book', 'ReservationsController@storeGuest')->name('bookStore');
 
 Route::get('/paiement','ReservationsController@paiementIndex')->name('paiement.index');
+Route::get('/confirmerPaiement/{id}', 'ReservationsController@update')->name('paiement.success');
+Route::get('/supprimerPaiement/{id}', 'ReservationsController@destroy')->name('paiement.destroy');
+
+

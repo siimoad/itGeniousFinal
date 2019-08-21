@@ -28,4 +28,11 @@ class HomeController extends Controller
         else
         return view('Admin/dashboard');
     }
+
+    ########### Stats ################
+
+
+public function stats(){
+    
+}
 }

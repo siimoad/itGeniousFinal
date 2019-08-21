@@ -43,16 +43,12 @@
         
                         </td>
                         <td class="text-right">
-                            <div class="dropdown">
-                                <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <i class="fas fa-ellipsis-v"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <a class="dropdown-item" href="{{route('annonce.showAnnonce', ['id' => $annonce->id])}}">Modifier Annonce</a>
-                                    <a class="dropdown-item" href="{{route('annonce.destroy', ['id' => $annonce->id])}}">Supprimer Annonce</a>
-                                </div>
-                            </div>
-                        </td>
+
+                                <a href="{{route('annonce.showAnnonce', ['id' => $annonce->id])}}" class="mb-3 btn btn-info active" role="button" aria-pressed="true">Modifier </a>
+                            <a href="dropdown-item" href="{{route('annonce.destroy', ['id' => $annonce->id])}}" class="mb-3 btn btn-danger active" role="button" aria-pressed="true">Supprimer </a>
+        
+                                </td>
+                       
                     </tr>
                         
                     @empty

@@ -14,7 +14,7 @@
                 <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="media align-items-center">
                         <span class="avatar avatar-sm rounded-circle">
-                        <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-1-800x800.jpg">
+                        <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/user_small.png">
                         </span>
                     </div>
                 </a>
@@ -111,7 +111,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('paiement.index')}}">
-                        <i class="ni ni-key-25 text-info"></i> Etat de paiement
+                        <i class="ni ni-key-25 text-info"></i> Reservations
                     </a>
                 </li>
                

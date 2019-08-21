@@ -159,8 +159,13 @@ class ReservationsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+$user = User::find($id);
+$user->etat = 0;
+$user->save();
+return back()->withStatus(__('Reservation successfully confirmed.'));
+
+}
+    
 
     /**
      * Remove the specified resource from storage.
@@ -170,8 +175,10 @@ class ReservationsController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        $reservation = Reservation::where('id', '=', $id)->first();
+        $reservation->delete();
+        return back()->withStatus(__('Reservation successfully deleted.'));    }
+        
     public function paiementIndex(){
         $reservations = Reservation::with('user')->with('annonce')->get();
 

@@ -15,7 +15,6 @@
                 <thead class="thead-light">
                     <tr>
                         <th scope="col">Project</th>
-                        <th scope="col">Nombres De Places</th>
                         <th scope="col">Date Debut</th>
                         <th scope="col">PDF</th>
                         <th scope="col"></th>
@@ -26,12 +25,9 @@
                     <tr>
                         <th scope="row" class="name">
                             <div class="media align-items-center">
-                                <span class="mb-0 text-sm"><a href="{{ route('formation', ['id' => $formation->id])}}"> {{$formation->titre}}</a></span>
+                                <span class="mb-0 text-sm"> {{$formation->titre}}</span>
                             </div>
                         </th>
-                        <td class="font-weight-normal">
-                            30 
-                        </td>
                         <td >
                             <span class="badge badge-dot mr-4">
                              30/10/2019
@@ -39,14 +35,12 @@
                         </td>
                         <td >{{$formation->formation_pdf}}</td>
                         <td class="text-right">
-                            <div class="dropdown">
-                                <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <i class="fas fa-ellipsis-v"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <a class="dropdown-item" href="{{route('formation.show', ['id' => $formation->id])}}">Modifier Formation</a>
-                                    <a class="dropdown-item" href="{{route('formation.destroy', ['id' => $formation->id])}}">Supprimer Formation</a>
-                                </div>
+
+                            <a href="{{route('formation.show', ['id' => $formation->id])}}" class="mb-3 btn btn-info active" role="button" aria-pressed="true">Modifier </a>
+                        <a href="{{route('formation.destroy', ['id' => $formation->id])}}" class="mb-3 btn btn-danger active" role="button" aria-pressed="true">Supprimer </a>
+    
+                            </td>
+
                             </div>
                         </td>
                     </tr>

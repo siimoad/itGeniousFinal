@@ -26,24 +26,21 @@
                             </div>
                         </th>
                         <td class="font-weight-normal">
-                             {{$reservation->annonce->titre}}
+                             {{$reservation->annonce->formation->titre}}
                         </td>
                         <td >
-
-@php if($reservation->user->etat == 0){
-    Payé
-}
-elseif ($reservation->user->etat == 1) {
-    Payé1
-}
-else ($reservation->user->etat == 2) {
-    Payé2
-}@endphp
+                            @if($reservation->user->etat == 0)
+                                Payé
+                            
+                            @else 
+                                Non payee
+                            
+                            @endif
 
                         </td>
                         <td class="text-right">
-                    <a href="#" class="mb-3 btn btn-secondary active" role="button" aria-pressed="true">Confirmer </a>
-                    <a href="#" class="mb-3 btn btn-secondary active" role="button" aria-pressed="true">Annuler </a>
+                        <a href="{{route('paiement.success',['id' => $reservation->user->id])}}" class="mb-3 btn btn-success active" role="button" aria-pressed="true">Confirmer </a>
+                    <a href="{{route('paiement.destroy',['id' => $reservation->id])}}" class="mb-3 btn btn-danger active" role="button" aria-pressed="true">Annuler </a>
 
                         </td>
                     </tr>

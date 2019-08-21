@@ -3672,26 +3672,7 @@ a.cpns {
 	-ms-transform: scale(1);
 	transform: scale(1);
   }
-  <footer class="footer bg-light megamenu site-footer">
-  <div class=" container">
-	  <div class="text-center py-1 ">© 2019 Copyright:  <span class="text-primary">Itpourtous </span></div>
-  </div>
-</footer>
-
-
-
-Found the snippets here works really well for bootstrap
-
-Html:
-
-<div id="wrap">
-  <div id="main" class="container clear-top">
-    <p>Your content here</p>
-  </div>
-</div>
-<footer class="footer"></footer>
-
-CSS:
+  
 
 html, body {
   height: 100%;

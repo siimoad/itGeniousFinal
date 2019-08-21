@@ -29,7 +29,7 @@
                                         <label class="form-control-label" for="input-titre">{{ __('Formation') }}</label>
                                         <select type="text" name="titre" id="input-titre"
                                             class="form-control form-control-alternative{{ $errors->has('titre') ? ' is-invalid' : '' }}" 
-                                            placeholder="{{ __('Titre') }}" required autofocus>
+                                            placeholder="{{ __('Titre') }}"  autofocus>
                                             <option value="<?php echo $annonce->formation->id; ?>">
                                                 {{ $annonce->formation->titre  }}  
                                             </option>
@@ -42,7 +42,7 @@
                                     </div>
                                      <div class="col form-group{{ $errors->has('prix') ? ' has-danger' : '' }}">
                                         <label class="form-control-label" for="input-prix">{{ __('Prix') }}</label>
-                                        <input type="text" name="prix" id="input-prix" class="form-control form-control-alternative{{ $errors->has('prix') ? ' is-invalid' : '' }}" placeholder="{{ __('Prix') }}" value="{{$annonce->prix}}" required autofocus>
+                                        <input type="text" name="prix" id="input-prix" class="form-control form-control-alternative{{ $errors->has('prix') ? ' is-invalid' : '' }}" placeholder="{{ __('Prix') }}" value="{{$annonce->prix}}"  autofocus>
                                         @if ($errors->has('prix'))
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $errors->first('prix') }}</strong>
@@ -54,7 +54,7 @@
                                 <div class="row">
                                 <div class="col form-group{{ $errors->has('annonce_photo') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-annonce_photo">{{ __('Image d\'annonce') }}</label>
-                                    <input type="file" name="annonce_photo" id="input-annonce_photo" class="form-control form-control-alternative{{ $errors->has('annonce_photo') ? ' is-invalid' : '' }}" placeholder="{{ __('Annonce Image') }}" value="{{$annonce->annonce_photo}}" required>
+                                    <input type="file" name="annonce_photo" id="input-annonce_photo" class="form-control form-control-alternative{{ $errors->has('annonce_photo') ? ' is-invalid' : '' }}" placeholder="{{ __('Annonce Image') }}" value="{{$annonce->annonce_photo}}" >
 
                                     @if ($errors->has('annonce_photo'))
                                         <span class="invalid-feedback" role="alert">
@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="col form-group{{ $errors->has('annonce_photo2') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-annonce_photo2">{{ __('Image d\'annonce 2') }}</label>
-                                    <input type="file" name="annonce_photo2" id="input-annonce_photo2" class="form-control form-control-alternative{{ $errors->has('annonce_photo2') ? ' is-invalid' : '' }}" placeholder="{{ __('Annonce Image 2') }}" value="{{$annonce->annonce_photo2}}" required>
+                                    <input type="file" name="annonce_photo2" id="input-annonce_photo2" class="form-control form-control-alternative{{ $errors->has('annonce_photo2') ? ' is-invalid' : '' }}" placeholder="{{ __('Annonce Image 2') }}" value="{{$annonce->annonce_photo2}}" >
                                 
                                     @if ($errors->has('annonce_photo2'))
                                         <span class="invalid-feedback" role="alert">

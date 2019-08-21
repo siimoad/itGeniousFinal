@@ -102,12 +102,7 @@ class AnnoncesController extends Controller
 
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'titre' => 'required',
-            'prix' => 'required',
-            'annonce_photo' => 'required',
-            'annonce_photo2' => 'required',
-        ]);
+
         $annonce = Annonce::with('formation')->find($id);
         $annonce->formation->titre = $request->input('titre');
         $annonce->prix = $request->input('prix');
