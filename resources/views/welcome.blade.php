@@ -22,7 +22,7 @@
 									<div class="img-div1">
 										<a href="{{ route('details', ['id' => $annonce->id]) }}"><img src="{{asset("argon/img/formations/$annonce->annonce_photo")}}" class="img-fluid" ></a>
 									</div>
-								</div>
+								</div>	
 					</div>
 					@endif
 								@endforeach

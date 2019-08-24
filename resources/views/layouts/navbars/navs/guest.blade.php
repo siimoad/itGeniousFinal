@@ -7,9 +7,9 @@
 			<!-- start header_right -->
 			<div class="header_right">
 				<div class="rgt-bottom">
-					<div class="log">
-					<div class="login" >
-						<div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
+					<div class="log ">
+					<div class="login">
+						<div id="loginContainer"><a href="#" id="loginButton"><span class="text-white">Login</span></a>
 						    <div id="loginBox">                
 								<form role="form" method="POST" action="{{ route('login') }}" id="loginForm">
 									                            @csrf
@@ -51,13 +51,13 @@
 						</div>
 					</div>
 				</div>
-					
-				<div class="reg">
-					<a class="text-muted" href="{{ route('register') }}">S'inscrire</a>
+				<div class="reg">			
+						<div id="regiContainer"><a href="{{route('register')}}"id="regiButton"><span class="text-white">S'inscrire</span></a></div>
 				</div>
-				<div class="create_btn">
-					<a href="{{ route('contact') }}">Nous Contacter</a>
-				</div>
+				
+				<div class="crt-btn" >
+					<a href="{{route('contact')}}" ><span class="text-white">Nous Contacter</span></a>
+				</div >
 				<div class="clearfix"> </div>
 			</div>
 			<div class="clearfix"> </div>

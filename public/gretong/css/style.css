@@ -445,9 +445,10 @@ select.item_Size {
 }
 #loginContainer a span {
   display: block;
-  padding: 2px 14px;
-  border: 1px solid #555;
-  font-weight: 300;
+  padding: 5px 14px;
+  font-weight: 250;
+  background-color:#c73631;
+  
 }
 /* Login Button */
 #loginButton { 
@@ -456,6 +457,53 @@ select.item_Size {
     z-index:30;
     cursor:pointer;
 }
+#loginButton :hover{
+		background: #00405d;
+		color:#ffffff; 
+		text-decoration:none;
+  }
+  
+/*register Button*/
+#regiContainer {
+    position:relative;
+}
+#regiContainer a span {
+  display: block;
+  padding: 5px 14px;
+  font-weight: 250;
+  background-color:#2f6ea4;
+  
+}
+#regiButton { 
+    display:inline-block;  
+    
+}
+#regiButton :hover{
+		background: #00405d;
+		color:#ffffff; 
+		text-decoration:none;
+  }	
+/* Contact Box */
+#contactContainer {
+    position:relative;
+}
+#contactContainer a span {
+  display: block;
+  padding: 5px 14px;
+  font-weight: 250;
+  background-color:#515151;
+  
+}
+
+#contactButton { 
+    display:inline-block;  
+    
+}
+#contactButton :hover{
+		background: #00405d;
+		color:#ffffff; 
+		text-decoration:none;
+  }	
 /* Login Box */
 #loginBox {
     position:absolute;
@@ -621,12 +669,12 @@ input:focus {
 }
 .log {
   float: left;
-  width: 19%;
+  width: 17%;
 }
 .reg {
   float: left;
-  width: 20%;
-  margin: 5px 0;
+  width: 23%;
+  
 }
 /* create_btn */
 .create_btn {
@@ -655,12 +703,7 @@ input:focus {
 	vertical-align: top;
 	margin-top: 3px;
 }
-.reg a {
-  vertical-align: middle;
-  font-size: 0.85em;
-  font-weight: 300;
-  text-decoration: none;
-}
+
 /* start icon styles */
 .icon1:before,.icon1:after {
 	content: "";
@@ -829,7 +872,7 @@ ul.megamenu.skyblue {
   background: #f5f5f5;
 }
 .rgt-bottom {
-  margin-bottom: 1em;
+  margin-bottom: 3em;
 }
 /* start menu */
 .h_nav h4{
@@ -911,11 +954,11 @@ ul.megamenu.skyblue {
   text-transform: capitalize;
   display: inline-block;
   padding: 6px 16px;
-  font-size: 0.8725em;
+  font-size: 0.9em;
   font-weight: 300;
   color: #f9f9f9;
   border: 1px solid #f9f9f9;
-  background-color: #888888;
+  background-color:#515151;
   text-decoration: none;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -923,8 +966,8 @@ ul.megamenu.skyblue {
   transition: all 0.3s ease-in-out;
 }
 .crt-btn a:hover{
-  background:#ff6978;
-  border:1px solid #ff6978;
+  background:#00405d;;
+  
 }
 .arriv-info1 {
   position: absolute;
@@ -2576,7 +2619,7 @@ p.cart a {
 }
 .header_right {
   float: right;
-  width: 48%;
+  width: 30%;
 }
 .grid_text h3, .grid_text-middle h3 {
 	font-size: 15px;
@@ -2718,12 +2761,10 @@ p.cart a {
 }
 }
 @media (max-width:768px){
-#loginContainer a span {
-  padding: 2px 4px;
-}
+
 .log {
   float: left;
-  width: 15%;
+  width: 12%;
 }
 .create_btn a {
   padding: 6px 8px;
@@ -2731,7 +2772,7 @@ p.cart a {
 }
 .reg {
   float: left;
-  width: 21%;
+  width: 17%;
   margin: 5px 0;
 }
 .icon1 {
@@ -2930,15 +2971,12 @@ i.ars {
 	padding: 16px 5px;
 	font-size: 0.85em;
 }
-#loginContainer a span {
-  padding: 0px 4px;
-  font-size: .8em;
-}
+
 .reg a {
   font-size: 0.75em;
 }
 .reg {
-  width: 20%;
+  width: 25%;
   margin: 1px 0;
 }
 .icon1 li {
@@ -2954,7 +2992,7 @@ i.ars {
 }
 .log {
   float: left;
-  width: 15%;
+  width: 17%;
 }
 .create_btn a {
   padding: 3px 5px;
@@ -2970,10 +3008,10 @@ i.ars {
 }
 .header_right {
   float: right;
-  width: 53%;
+  width: 60%;
 }
 .rgt-bottom {
-  margin-bottom: 0.5em;
+  margin-bottom: 0em;
 }
 .logo {
   float: left;
@@ -3150,7 +3188,7 @@ p.prod-desc, p.product_descr {
 }
 .header_right {
   float: right;
-  width: 42%;
+  width: 60%;
 }
 .reg {
   width: 35%;
@@ -3165,7 +3203,7 @@ p.prod-desc, p.product_descr {
 }
 .log {
   float: left;
-  width: 45%;
+  width: 17%;
 }
 .rgt-bottom {
   margin: 0;
@@ -3309,17 +3347,14 @@ ul.icon1 {
 .reg {
   display: none;
 }
-#loginContainer a span {
-  padding: 2px 10px;
-  font-size: 1em;
-}
+
 .rgt-bottom {
   margin: 0;
   padding: 0em 0;
 }
 .log {
   float: left;
-  width: 100%;
+  width: 40%;
   display:none;
 }
 .header_right {
