@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-use Carbon;
+use Carbon\Carbon;
 use App\User;
 use App\Reservation;
 use App\Formation;
@@ -56,4 +56,8 @@ class User extends Authenticatable
         $registered = Reservation::with('user')->with('annonce')->where('reservations.id',$this->id)->groupBy('annonces.id');
         return $registered;
     }
+    public function getAgeAttribute()
+{
+    return Carbon::parse($this->attributes['date_naissance'])->age;
+}
 }
