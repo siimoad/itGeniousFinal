@@ -23,11 +23,11 @@
             
                 </div>
                 <div class="text-center text-white my-3">
-                        <INPUT class="btn btn-lg btn-primary" TYPE="button" VALUE="Retour" onClick="history.back()">
+                        <INPUT class="btn btn-dark" TYPE="button" VALUE="Retour" onClick="history.back()">
                         
                     </div>
                
-                @include('Guest.footer')
+           
                 
         </div>
 

@@ -29,10 +29,10 @@
                         </td>
                         <td >
                             @if($reservation->user->etat == 2)
-                                Payé
+                               <span class="text-danger"> Payé</span>
                             
                             @else 
-                                Non payee
+                               <span class="text-success"> Non payee</span>
                             
                             @endif
 

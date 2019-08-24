@@ -20,17 +20,17 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
                     <div class=" dropdown-header noti-title">
-                        <h6 class="text-overflow m-0">Welcome!</h6>
+                        <h6 class="text-overflow m-0">Bonjour!</h6>
                     </div>
                     <a href="{{route('profile.edit')}}" class="dropdown-item">
                         <i class="ni ni-single-02"></i>
-                        <span>My profile</span>
+                        <span>Mon profil</span>
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="{{route('logout')}}" class="dropdown-item" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                         <i class="ni ni-user-run"></i>
-                        <span>Logout</span>
+                        <span>Se deconnecter</span>
                     </a>
                 </div>
             </li>
@@ -68,7 +68,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('home')}}">
-                        <i class="ni ni-tv-2 text-primary"></i> Dashboard
+                        <i class="ni ni-tv-2 text-primary"></i> Tableau de bord
                     </a>
                 </li>
                 <!--
@@ -96,12 +96,12 @@
             -->
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('formation')}}">
-                        <i class="ni ni-planet text-blue"></i> Formations
+                        <i class="ni ni-single-copy-04 text-blue"></i> Formations
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('annonce')}}">
-                        <i class="ni ni-pin-3 text-orange"></i> Annonces
+                        <i class="ni ni-notification-70 text-orange"></i> Annonces
                     </a>
                 </li>
                 <li class="nav-item">
@@ -111,12 +111,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('paiement.index')}}">
-                        <i class="ni ni-key-25 text-info"></i> Reservations non payés
+                        <i class="ni ni-money-coins text-info"></i> Reservations non payés
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('paiement2.index')}}">
-                        <i class="ni ni-key-25 text-info"></i> Reservations payés
+                        <i class="ni ni-money-coins text-info"></i> Reservations payés
                     </a>
                 </li>
                

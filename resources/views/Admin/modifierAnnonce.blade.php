@@ -87,6 +87,6 @@
             </div>
         </div>
         
-        @include('Guest.footer')
+      
     </div>
 @endsection

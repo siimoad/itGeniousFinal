@@ -38,14 +38,14 @@
 
                         <td class="w-25    p-2">
                             <div>
-                                  {{$annonce->prix}}
+                                  {{$annonce->prix}} DHs
                             </div>
         
                         </td>
                         <td class="text-right">
 
-                                <a href="{{route('annonce.showAnnonce', ['id' => $annonce->id])}}" class="mb-3 btn btn-info active" role="button" aria-pressed="true">Modifier </a>
-                            <a href="dropdown-item" href="{{route('annonce.destroy', ['id' => $annonce->id])}}" class="mb-3 btn btn-danger active" role="button" aria-pressed="true">Supprimer </a>
+                                <a href="{{route('annonce.showAnnonce', ['id' => $annonce->id])}}" class="mb-3 btn btn-info active" role="button" aria-pressed="true"><i class="fas fa-edit"></i></a>
+                            <a href="dropdown-item" href="{{route('annonce.destroy', ['id' => $annonce->id])}}" class="mb-3 btn btn-danger active" role="button" aria-pressed="true"><i class="fa fa-trash" ></i></a>
         
                                 </td>
                        
@@ -63,7 +63,7 @@
                 </tbody>
             </table>
             <div class="text-center text-white">
-                    <INPUT class="btn btn-lg btn-primary" TYPE="button" VALUE="Retour" onClick="history.back()">
+                    <INPUT class="btn btn-dark" TYPE="button" VALUE="Retour" onClick="history.back()">
                     
                 </div>
         </div>

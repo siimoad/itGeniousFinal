@@ -28,13 +28,13 @@
                                 <span class="mb-0 text-sm"> {{$formation->titre}}</span>
                             </div>
                         </th>
-                        <td ><a href="storage/brochure_pdf/{{$formation->brochure_pdf}}"}}">Brochure PDF</a>
+                        <td ><a href="storage/brochure_pdf/{{$formation->brochure_pdf}}"}}>Brochure PDF</a>
 
-                            <td ><a href="storage/formation_pdf/{{$formation->brochure_pdf}}"}}">Formation PDF</a>
+                            <td ><a href="storage/formation_pdf/{{$formation->brochure_pdf}}"}}>Formation PDF</a>
                                 <td class="text-right">
 
-                            <a href="{{route('formation.show', ['id' => $formation->id])}}" class="mb-3 btn btn-info active" role="button" aria-pressed="true">Modifier </a>
-                        <a href="{{route('formation.destroy', ['id' => $formation->id])}}" class="mb-3 btn btn-danger active" role="button" aria-pressed="true">Supprimer </a>
+                            <a href="{{route('formation.show', ['id' => $formation->id])}}" class="mb-3 btn btn-info active" role="button" aria-pressed="true"><i class="fas fa-edit"></i></a>
+                        <a href="{{route('formation.destroy', ['id' => $formation->id])}}" class="mb-3 btn btn-danger active" role="button" aria-pressed="true"><i class="fa fa-trash" ></i></a>
     
                             </td>
 
@@ -55,7 +55,7 @@
             </table>
         </div>
         <div class="text-center text-white">
-                <INPUT class="btn btn-lg btn-primary" TYPE="button" VALUE="Retour" onClick="history.back()">
+                <INPUT class="btn btn-dark" TYPE="button" VALUE="Retour" onClick="history.back()">
                 
             </div>
         

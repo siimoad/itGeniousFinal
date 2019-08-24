@@ -29,9 +29,9 @@
                             </div>
                         </th>
                         @if ($formation->user->etat == 2)
-                        <td ><a href="storage/brochure_pdf/{{$formation->annonce->formation->brochure_pdf}}"}}">Brochure PDF</a>
+                        <td ><a href="storage/brochure_pdf/{{$formation->annonce->formation->brochure_pdf}}"}}>Brochure PDF</a>
                         </td>
-                        <td ><a href="storage/formation_pdf/{{$formation->annonce->formation->formation_pdf}}"}}">Formation PDF</a>
+                        <td ><a href="storage/formation_pdf/{{$formation->annonce->formation->formation_pdf}}"}}>Formation PDF</a>
                         @else
                         <td >Brochure PDF
                         </td>
@@ -53,7 +53,7 @@
         </div>
         
     </div><div class="text-center text-white py-7">
-            <INPUT class="btn btn-lg btn-primary" TYPE="button" VALUE="Retour" onClick="history.back()">
+            <INPUT class="btn btn-dark" TYPE="button" VALUE="Retour" onClick="history.back()">
             
         </div>
             </div>

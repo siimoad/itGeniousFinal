@@ -68,8 +68,8 @@
             </form>
 
             <div class="text-center text-white">
-                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
-                <a class="btn btn-primary" onclick="document.getElementById('contact-form').reset();">Reset</a>
+                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Envoyer</a>
+                <a class="btn btn-primary" onclick="document.getElementById('contact-form').reset();">Annuler</a>
             </div>
             <div class="status"></div>
         </div>
