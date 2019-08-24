@@ -6,7 +6,15 @@ use App\Formation;
 use \Validator;
 use Redirect;
 use App\User;
+use Illuminate\Support\Facades\Hash;
+
 use App\Reservation;
+use App\Mail\WelcomeMail;
+use App\Mail\Reservation1;
+use App\Mail\Reservation2;
+
+use Illuminate\Support\Facades\Mail;
+
 
 use Illuminate\Http\Request;
 
@@ -60,13 +68,13 @@ class ReservationsController extends Controller
             $user = new User;
             $user->name = request('name');
             $user->sexe = request('sexe');
-            $user->etat = 3;
+            $user->etat = 1;
             $user->date_naissance = request('date_naissance');
             $user->ville = request('ville');
             $user->etablissement = "guest";
             $user->niveau = "guest";
             $user->privilege = "guest";
-            $user->password = "guest";
+            $user->password = Hash::make("guest1234");
             $user->tel = request('tel');
             $user->email = request('email');
             $user->save();
@@ -76,7 +84,13 @@ class ReservationsController extends Controller
             $reservation->annonce_id = request('annonce_id');
             $reservation->user_id = $userid;
             $reservation->save();
-
+            $reservationid = $reservation->annonce_id;
+            $annonce = Annonce::with('formation')->where('id',$reservationid)->first();
+            $formation_titre = $annonce->formation->titre;
+            $emails = [$user->email];
+            Mail::to($emails)
+            ->send(new Reservation1($user,$formation_titre));
+            
     return back()->withStatus(__('Reservation successfully added.'));
 }
     }
@@ -94,23 +108,21 @@ class ReservationsController extends Controller
             $error = $validator->errors()->first();
             return $error;
         }
-
-    
          else {
             $user = new User;
             $user->name = request('name');
             $user->sexe = request('sexe');
-            $user->etat = 4;
+            $user->etat = 1;
             $user->date_naissance = request('date_naissance');
             $user->ville = request('ville');
             $user->etablissement = "guest";
             $user->niveau = "guest";
             $user->privilege = "guest";
-            $user->password = "guest";
+            $user->password = Hash::make("guest1234");
             $user->tel = request('tel');
             $user->email = request('email');
             $user->save();
-         
+            Mail::to($user->email)->send(new Reservation2($user));
     return back()->withStatus(__('Reservation successfully added.'));
 }
 
@@ -160,8 +172,12 @@ class ReservationsController extends Controller
     public function update(Request $request, $id)
     {
 $user = User::find($id);
-$user->etat = 0;
+$user->etat = 2;
+$pw = User::generatePassword();
+$user->password = $pw;
 $user->save();
+
+Mail::to($user->email)->send(new WelcomeMail($user));
 return back()->withStatus(__('Reservation successfully confirmed.'));
 
 }
@@ -180,9 +196,18 @@ return back()->withStatus(__('Reservation successfully confirmed.'));
         return back()->withStatus(__('Reservation successfully deleted.'));    }
         
     public function paiementIndex(){
-        $reservations = Reservation::with('user')->with('annonce')->get();
+        $reservations = Reservation::join('users', 'reservations.user_id', '=', 'users.id')
+        ->join('annonces','reservations.annonce_id','=','annonces.id')
+        ->where('users.etat','<>',2)->paginate(20);
 
         return view('Admin.paiement', compact('reservations'));
+    }
+    public function paiementIndex2(){
+        $reservations = Reservation::join('users', 'reservations.user_id', '=', 'users.id')
+        ->join('annonces','reservations.annonce_id','=','annonces.id')
+        ->where('users.etat','=',2)->paginate(20);
+
+        return view('Admin.paiement2', compact('reservations'));
     }
 
 }

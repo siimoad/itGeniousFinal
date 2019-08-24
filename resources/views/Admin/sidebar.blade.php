@@ -111,7 +111,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('paiement.index')}}">
-                        <i class="ni ni-key-25 text-info"></i> Reservations
+                        <i class="ni ni-key-25 text-info"></i> Reservations non payés
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('paiement2.index')}}">
+                        <i class="ni ni-key-25 text-info"></i> Reservations payés
                     </a>
                 </li>
                

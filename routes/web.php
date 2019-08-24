@@ -31,13 +31,9 @@ Route::get('/detail', function () {
     return view('Admin/detail');
 })->name('detail');
 
-Route::get('/MesFormations', function () {
-    return view('Client/mesformations');
-})->name('mesformations');
+Route::get('/MesFormations', 'HomeController@index')->name('mesformations');
 
-Route::get('/MesPaiements', function () {
-    return view('Client/Paiementclient');
-})->name('Paiementclient');
+Route::get('/MesPaiements', 'FormationsController@mesPaiements')->name('Paiementclient');
 
 
 
@@ -83,7 +79,10 @@ Route::post('/reserver/{id}', 'ReservationsController@store')->name('reserver');
 Route::post('/book', 'ReservationsController@storeGuest')->name('bookStore');
 
 Route::get('/paiement','ReservationsController@paiementIndex')->name('paiement.index');
+Route::get('/paiement2','ReservationsController@paiementIndex2')->name('paiement2.index');
 Route::get('/confirmerPaiement/{id}', 'ReservationsController@update')->name('paiement.success');
 Route::get('/supprimerPaiement/{id}', 'ReservationsController@destroy')->name('paiement.destroy');
 
 
+Route::get('/get-sales-chart-data','ChartDataController@getMonthlyPrice');
+Route::get('/get-users-chart-data','ChartDataController@getMonthlyUsers');

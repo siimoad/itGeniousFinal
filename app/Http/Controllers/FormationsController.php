@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Formation;
+use Auth;
+use App\Reservation;
 use Illuminate\Http\Request;
 
 class FormationsController extends Controller
@@ -98,5 +100,13 @@ class FormationsController extends Controller
         return back()->withStatus(__('Formation successfully deleted.'));
 
     }
+public function mesPaiements(){
+    $id = Auth::user()->id;
+            $formations = Reservation::join('annonces','reservations.annonce_id','=','annonces.id')
+            ->join('users','reservations.user_id','=','users.id')
+            ->where('user_id','=',$id)
+            ->get();
+            return view('Client.Paiementclient', ['formations' => $formations]);
+}
     
 }

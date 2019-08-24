@@ -15,39 +15,29 @@
                 <thead class="thead-light">
                     <tr>
                         <th scope="col">Formation</th>
-                        <th scope="col">Date Debut</th>
-                        <th scope="col">Date Fin</th>
-                        <th scope="col">Paiement</th>
-                        <th scope="col"></th>
+                        <th scope="col">Etat de Paiement</th>
                     </tr>
                 </thead>
                 <tbody class="list">
-                  
+                    @forelse ($formations as $formation)
+
                     <tr>
                         <th scope="row" class="name">
                             <div class="media align-items-center">
-                                <span class="mb-0 text-sm"> Microsoft</span>
+                                <span class="mb-0 text-sm"> {{$formation->annonce->formation->titre}}</span>
                             </div>
                         </th>
-                        <td class="font-weight-normal">
-                            30/10/2019
-                        </td>
-                        <td >
-                            <span class="badge badge-dot mr-4">
-                             30/12/2019
-                            </span>
-                        </td>
-                        <td >Non paye</td>
-                        <td class="text-right">
-                            
-                        </td>
-                    </tr>
                         
-                   
-                               
-                    
-                  
-                    
+                        <td >@if ($formation->user->etat == 2)
+                            Payee
+                            @else
+                            Non payee
+                        @endif</td>
+
+                    </tr>
+                        @empty
+                        @endforelse
+
                 </tbody>
             </table>
         </div>

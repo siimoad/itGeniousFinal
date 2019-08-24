@@ -14,35 +14,35 @@
             <table class="table align-items-center">
                 <thead class="thead-light">
                     <tr>
-                        <th scope="col">Project</th>
-                        <th scope="col">Date Debut</th>
-                        <th scope="col">Date Fin</th>
-                        <th scope="col">PDF</th>
-                        <th scope="col"></th>
+                        <th scope="col">Formation</th>
+                        <th scope="col">Brochure PDF</th>
+                        <th scope="col">Formation PDF</th>
                     </tr>
                 </thead>
                 <tbody class="list">
-                  
+                    @forelse ($formations as $formation)
+
                     <tr>
                         <th scope="row" class="name">
                             <div class="media align-items-center">
-                                <span class="mb-0 text-sm"> Microsoft</span>
+                                <span class="mb-0 text-sm"> {{$formation->annonce->formation->titre}}</span>
                             </div>
                         </th>
-                        <td class="font-weight-normal">
-                            30/10/2019
+                        @if ($formation->user->etat == 2)
+                        <td ><a href="storage/brochure_pdf/{{$formation->annonce->formation->brochure_pdf}}"}}">Brochure PDF</a>
                         </td>
-                        <td >
-                            <span class="badge badge-dot mr-4">
-                             30/12/2019
-                            </span>
+                        <td ><a href="storage/formation_pdf/{{$formation->annonce->formation->formation_pdf}}"}}">Formation PDF</a>
+                        @else
+                        <td >Brochure PDF
                         </td>
-                        <td >pdf</td>
-                        <td class="text-right">
+                        <td >Formation PDF</td>
                             
-                        </td>
-                    </tr>
+                        @endif
                         
+
+                    </tr>
+                        @empty
+                        @endforelse
                    
                                
                     

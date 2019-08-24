@@ -910,22 +910,25 @@ var Charts = (function() {
 // Orders chart
 //
 
-var OrdersChart = (function() {
+var OrdersChart = (function(response) {
 
-	//
-	// Variables
-	//
+	function ajaxCall(){
 
-	var $chart = $('#chart-orders');
-	var $ordersSelect = $('[name="ordersSelect"]');
+		$.ajax({
+		  type: 'GET',
+		  url: 'http://' + window.location.hostname + '/get-users-chart-data',
+		  success: function(response)
+		  {
+  
+			  initChart(response);//yes prints in the console
+		  }
+  
+  });}
 
-
-	//
-	// Methods
-	//
 
 	// Init chart
-	function initChart($chart) {
+	function initChart(response) {
+		var $chart = $('#chart-orders');
 
 		// Create chart
 		var ordersChart = new Chart($chart, {
@@ -962,24 +965,17 @@ var OrdersChart = (function() {
 				}
 			},
 			data: {
-				labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+				labels: response.monthsUsers,
 				datasets: [{
 					label: 'Sales',
-					data: [25, 20, 30, 22, 17, 29]
+					data: response.users
 				}]
 			}
 		});
 
-		// Save to jQuery object
-		$chart.data('chart', ordersChart);
+
 	}
-
-
-	// Init chart
-	if ($chart.length) {
-		initChart($chart);
-	}
-
+	ajaxCall();
 })();
 
 //
@@ -992,17 +988,31 @@ var OrdersChart = (function() {
 // Sales chart
 //
 
-var SalesChart = (function() {
+var SalesChart = (function(response) {
 
 	// Variables
 
-	var $chart = $('#chart-sales');
+
+	function ajaxCall(){
+
+	  $.ajax({
+		type: 'GET',
+		url: 'http://' + window.location.hostname + '/get-sales-chart-data',
+		success: function(response)
+		{
+
+			init(response);//yes prints in the console
+		}
+
+});}
+	
+
 
 
 	// Methods
 
-	function init($chart) {
-
+	function init(response) {
+		var $chart = $('#chart-sales');
 		var salesChart = new Chart($chart, {
 			type: 'line',
 			options: {
@@ -1015,7 +1025,7 @@ var SalesChart = (function() {
 						ticks: {
 							callback: function(value) {
 								if (!(value % 10)) {
-									return '$' + value + 'k';
+									return   value + ' DH';
 								}
 							}
 						}
@@ -1039,25 +1049,19 @@ var SalesChart = (function() {
 				}
 			},
 			data: {
-				labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+				labels: response.monthsPrices,
 				datasets: [{
-					label: 'Performance',
-					data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
+					label: 'Price',
+					data: response.price
 				}]
 			}
 		});
 
-		// Save to jQuery object
-
-		$chart.data('chart', salesChart);
 
 	};
 
 
 	// Events
 
-	if ($chart.length) {
-		init($chart);
-	}
-
+		ajaxCall();
 })();

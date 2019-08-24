@@ -14,9 +14,9 @@
             <table class="table align-items-center">
                 <thead class="thead-light">
                     <tr>
-                        <th scope="col">Project</th>
-                        <th scope="col">Date Debut</th>
-                        <th scope="col">PDF</th>
+                        <th scope="col">Formation</th>
+                        <th scope="col">Brochure PDF</th>
+                        <th scope="col">Formation PDF</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -28,13 +28,10 @@
                                 <span class="mb-0 text-sm"> {{$formation->titre}}</span>
                             </div>
                         </th>
-                        <td >
-                            <span class="badge badge-dot mr-4">
-                             30/10/2019
-                            </span>
-                        </td>
-                        <td >{{$formation->formation_pdf}}</td>
-                        <td class="text-right">
+                        <td ><a href="storage/brochure_pdf/{{$formation->brochure_pdf}}"}}">Brochure PDF</a>
+
+                            <td ><a href="storage/formation_pdf/{{$formation->brochure_pdf}}"}}">Formation PDF</a>
+                                <td class="text-right">
 
                             <a href="{{route('formation.show', ['id' => $formation->id])}}" class="mb-3 btn btn-info active" role="button" aria-pressed="true">Modifier </a>
                         <a href="{{route('formation.destroy', ['id' => $formation->id])}}" class="mb-3 btn btn-danger active" role="button" aria-pressed="true">Supprimer </a>

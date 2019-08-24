@@ -9,7 +9,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Nombre d'inscrits</h5>
-                                    <span class="h2 font-weight-bold mb-0">350,897</span>
+                                    <span class="h2 font-weight-bold mb-0">{{$users}}</span>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -26,7 +26,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Nombre de formations</h5>
-                                    <span class="h2 font-weight-bold mb-0">2,356</span>
+                                <span class="h2 font-weight-bold mb-0">{{$formations}}</span>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -43,7 +43,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Revenue</h5>
-                                    <span class="h2 font-weight-bold mb-0">924</span>
+                                    <span class="h2 font-weight-bold mb-0">{{$revenues}} DH</span>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">

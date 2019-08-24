@@ -23,37 +23,101 @@
                         <div class="row">
                             <div class="col">
                                 <div class="card-profile-stats d-flex justify-content-center mt-md-5">
-                                    <div>
-                                        <span class="heading">22</span>
-                                        <span class="description">{{ __('Friends') }}</span>
-                                    </div>
-                                    <div>
-                                        <span class="heading">10</span>
-                                        <span class="description">{{ __('Photos') }}</span>
-                                    </div>
-                                    <div>
-                                        <span class="heading">89</span>
-                                        <span class="description">{{ __('Comments') }}</span>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
                         <div class="text-center">
                             <h3>
-                                {{ auth()->user()->name }}<span class="font-weight-light">, 27</span>
+                                {{ auth()->user()->name }}<span class="font-weight-light">, {{auth()->user()->getAge()}} ans</span>
                             </h3>
-                            <div class="h5 font-weight-300">
-                                <i class="ni location_pin mr-2"></i>{{ __('Bucharest, Romania') }}
+                            <div class="h3 mt-3 font-weight-1000">
+                                <i class="ni location_pin mr-2"></i>{{ auth()->user()->ville }}
                             </div>
-                            <div class="h5 mt-4">
-                                <i class="ni business_briefcase-24 mr-2"></i>{{ __('Solution Manager - Creative Tim Officer') }}
+                            <div class="h3 mt-4">
+                                <i class="ni business_briefcase-24 mr-2"></i>@if (auth()->user()->sexe = 'homme')
+                                    Etudiant en <b>{{auth()->user()->niveau}}</b>
+                                @else
+                                Etudiante en <b>{{auth()->user()->niveau}}</b>
+
+                                @endif
                             </div>
                             <div>
-                                <i class="ni education_hat mr-2"></i>{{ __('University of Computer Science') }}
+                                <i class="ni education_hat mr-2"></i>
+                            @switch(auth()->user()->etablissement)
+                                @case('um6ss')
+                                <span> UNIVERSITÉ MOHAMMED VI DES SCIENCES DE LA SANTÉ </span>
+                                @break
+                                @case('uiass')
+                                <span> UNIVERSITÉ INTERNATIONALE ABULCASIS DES SCIENCES DE LA SANTÉ </span>
+                                @break
+                                @case('ueuromed')
+                                <span> UNIVERSITÉ EUROMED DE FÈS </span>
+                                @break
+                                @case('medmetiers')
+                                <span> MED UNIVERSITÉ – L’UNIVERSITÉ DES MÉTIERS </span>
+                                @break
+                                @case('mundiapolis')
+                                <span> UNIVERSITÉ MUNDIAPOLIS DE CASABLANCA </span>
+                                @break
+                                @case('usms')
+                                <span>  UNIVERSITÉ BÉNI MELLAL - SULTAN MOULAY SLIMANE </span>
+                                @break
+                                @case('upf')
+                                <span> UNIVERSITÉ PRIVÉE DE FÈS </span>
+                                @break
+                                @case('universiapolis')
+                                <span> UNIVERSIAPOLIS AGADIR </span>
+                                @break
+                                @case('aui')
+                                <span> UNIVERSITÉ AL AKHAWAYN </span>
+                                @break
+                                @case('ump')
+                                <span>  UNIVERSITÉ OUJDA - MOHAMMED PREMIER </span>
+                                @break
+                                @case('uae')
+                                <span> UNIVERSITÉ TANGER - ABDELMALEK ESSAÂDI </span>
+                                @break
+                                @case('uit')
+                                <span> UNIVERSITÉ IBN TOFAÏL KÉNITRA </span>
+                                @break
+                                @case('umi')
+                                <span> UNIVERSITÉ MOULAY ISMAÏL MEKNÈS </span>
+                                @break
+                                @case('alqaraouiyine')
+                                <span> UNIVERSITÉ QUARAOUIYINE FÈS </span>
+                                @break
+                                @case('ucd')
+                                <span> UNIVERSITÉ EL JADIDA - CHOUAÏB DOUKKALIS </span>
+                                @break
+                                @case('uh1')
+                                <span> UNIVERSITÉ SETTAT - HASSAN PREMIER </span>
+                                @break
+                                @case('uh2m')
+                                <span> UNIVERSITÉ MOHAMMEDIA - HASSAN II </span>
+                                @break
+                                @case('uh2c')
+                                <span> UNIVERSITÉ HASSAN II CASABLANCA </span>
+                                @break
+                                @case('um5c')
+                                <span> UNIVERSITÉ RABAT - MOHAMMED V SOUISSI </span>
+                                @break
+                                @case('um5a')
+                                <span> UNIVERSITÉ RABAT - MOHAMMED V AGDAL </span>
+                                @break
+                                @case('usmba')
+                                <span> UNIVERSITÉ FÈS - SIDI MOHAMED BEN ABDELAH </span>
+                                @break
+                                @case('uca')
+                                <span> UNIVERSITÉ MARRAKECH - CADI AYYAD </span>
+                                @break
+                                @case('uiz')
+                                <span> UNIVERSITÉ IBN ZOHR AGADIR </span>
+                                @break
+                            @default
+                            <span> Autre..</span>
+                            @endswitch
                             </div>
-                            <hr class="my-4" />
-                            <p>{{ __('Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music.') }}</p>
-                            <a href="#">{{ __('Show more') }}</a>
                         </div>
                     </div>
                 </div>

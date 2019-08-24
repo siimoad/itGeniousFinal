@@ -14,7 +14,6 @@
                         <th scope="col">Nom complet</th>
                         <th scope="col">Formation souhaitée</th>
                         <th scope="col">Etat de paiement</th>
-                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody class="list">
@@ -38,17 +37,12 @@
                             @endif
 
                         </td>
-                        <td class="text-right">
-                        <a href="{{route('paiement.success',['id' => $reservation->user->id])}}" class="mb-3 btn btn-info active" role="button" aria-pressed="true">Confirmer </a>
-                    <a href="{{route('paiement.destroy',['id' => $reservation->id])}}" class="mb-3 btn btn-danger active" role="button" aria-pressed="true">Annuler </a>
-
-                        </td>
                     </tr>
                         
                     @empty
                         
                     @endforelse
-                   
+
                             
                                
                     
@@ -56,6 +50,9 @@
                     
                 </tbody>
             </table>
+            <div class="align-items-center">{{ $reservations->links() }}</div>
+            
+
         </div>
         
     </div>

@@ -1,7 +1,11 @@
 <?php
 
 namespace App;
-
+use Carbon;
+use App\User;
+use App\Reservation;
+use App\Formation;
+use App\Annonce;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -21,11 +25,12 @@ class User extends Authenticatable
         'name', 'email', 'password','date_naissance','sexe','ville','etablissement','niveau','tel'
     ];
 
-    public function formation_items(){
-
-     //   return $this->hasMany(Annonce::class, 'id', 'partenaire_id');
-
+    public static function generatePassword()
+    {
+      // Generate random string and encrypt it. 
+      return bcrypt(str_random(35));
     }
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -46,5 +51,9 @@ class User extends Authenticatable
     public function reservation()
     {
         return $this->belongsTo(Reservation::class, 'user_id', 'id');
+    }
+    public function getCountRegistered(){
+        $registered = Reservation::with('user')->with('annonce')->where('reservations.id',$this->id)->groupBy('annonces.id');
+        return $registered;
     }
 }
