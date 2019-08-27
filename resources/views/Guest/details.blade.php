@@ -16,7 +16,7 @@
                         
                           
                                 <h4 class="text-success"> Inscription en cours</h4>
-                             <div class="short_overview my-4">
+                             <div class="short_overview my-4 justify-content-sm-center">
                              {!! nl2br($annonce->formation->description) !!}   
                             <br> <br>       
                              <p> <span class="text-danger ">Pour votre information : </span>
