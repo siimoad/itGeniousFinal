@@ -1,3 +1,5 @@
+@guest
+
 <div class="container">
 		<div class="header ">
 			<ul class="megamenu skyblue"	>
@@ -17,3 +19,4 @@
         <div class="header-body text-center mb-6"></div>
     </div>
 </div>
+@endguest

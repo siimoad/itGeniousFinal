@@ -37,7 +37,7 @@
                             </div>
                         
 
-                            <a href="#"><button type="button"   class="btn btn-primary" >Réservez votre place</button></a>
+                            <a href="{{ route('book') }}"><button type="button"   class="btn btn-primary" >Réservez votre place</button></a>
                             <a href="#"><button type="button" class="btn btn-primary " >Brochure</button></a>
 
                         </div>

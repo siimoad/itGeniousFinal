@@ -14,7 +14,7 @@ class AnnoncesController extends Controller
         }
     public function indexHome()
     {
-        $annonces = Annonce::with('formation')->get();;
+        $annonces = Annonce::with('formation')->get();
         return view('welcome')->with(compact('annonces', $annonces));
     }
     public function details($id)

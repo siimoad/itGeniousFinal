@@ -2,8 +2,8 @@
 
 @section('content')
 	@include('Guest.header')
-	
-	<div class="container ">
+	@guest
+			<div class="container ">
 			<div class="row ">	
 				@foreach($annonces as $annonce)
 				@if($annonce->id < 5)
@@ -31,6 +31,8 @@
 		</div>@include('Guest.footer')
 
 </div>
+	@endguest
+
 
 
 @endsection

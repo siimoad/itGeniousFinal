@@ -51,7 +51,12 @@ class HomeController extends Controller
         ->paginate(10);
         $formations = Formation::count();
         $users = User::count();
-        $revenues = Annonce::with('reservation')->sum('prix');
+        $revenues = Annonce::join('reservations', 'annonce_id', '=', 'annonces.id')->sum('prix');
+
+        // $revenues = DB::select("
+        // SELECT SUM(PRIX) FROM ANNONCES, RESERVATIONS WHERE ANNONCES.ID = RESERVATIONS.ANNONCE_ID
+
+        // ");
             return view('Admin.dashboard',compact('data','formations','users','revenues'));
 
         }
@@ -61,7 +66,6 @@ class HomeController extends Controller
     }
 
     ########### Stats ################
-
 
 
 
